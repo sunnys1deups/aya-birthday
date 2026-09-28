@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const birthdayIcon = document.getElementById("birthdayIcon");
+  const backgroundMusic = document.getElementById("backgroundMusic");
+  backgroundMusic.volume = 0.6;
+  backgroundMusic.play().catch(() => {});
   const windowOverlay = document.getElementById("windowOverlay");
   const closeBtn = document.getElementById("closeBtn");
   const steps = [...document.querySelectorAll(".flow-step")];
@@ -121,6 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   birthdayIcon.addEventListener("click", () => {
+    backgroundMusic.play().catch(() => {});
     resetFlow();
     windowOverlay.classList.remove("hidden");
     document.getElementById("username").focus({ preventScroll: true });
