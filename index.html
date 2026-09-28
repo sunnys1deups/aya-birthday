@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>birthday aya HEHE</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="desktop">
+    <button class="desktop-icon" id="birthdayIcon" type="button">
+      <img src="envelope.png" alt="Envelope Icon" class="icon-image" />
+      <span class="icon-label">birthday.exe</span>
+    </button>
+  </main>
+
+  <div class="window-overlay hidden" id="windowOverlay">
+    <section class="window-container" role="dialog" aria-modal="true" aria-labelledby="windowTitle">
+      <div class="window-header">
+        <span class="window-title" id="windowTitle">HAPPY 20TH BIRTHDAY AYA!~</span>
+        <button class="close-btn" id="closeBtn" type="button" aria-label="Close window">&times;</button>
+      </div>
+
+      <div class="window-body">
+        <section class="flow-step" id="loginStep" aria-labelledby="loginTitle">
+          <h1 id="loginTitle" tabindex="-1">Log in muna besh!</h1>
+          <form id="loginForm" class="login-form" novalidate>
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" autocomplete="username" placeholder="Your name" required />
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="m/day/year" required />
+            <p class="hint">Hint: what date is it today? (m/day/year)</p>
+            <p class="form-error" id="loginError" role="alert" aria-live="polite"></p>
+            <button class="primary-btn" type="submit">Log in <span aria-hidden="true">→</span></button>
+          </form>
+        </section>
+
+        <section class="flow-step" id="captchaStep" aria-labelledby="captchaTitle" hidden>
+          <div class="step-kicker">HUMAN VERIFICATION</div>
+          <p class="step-copy">Catch the 10 Earjen and Jordans >:3 </p>
+          <div class="captcha-score" aria-live="polite">
+            <span>Earjen <strong id="earjenCount">0</strong><small> / 10</small></span>
+            <span>Jordan <strong id="jordanCount">0</strong><small> / 10</small></span>
+          </div>
+          <div class="captcha-arena" id="captchaArena" aria-label="Catch us">
+            <p class="arena-instruction" id="arenaInstruction">Dali na AUGHHH</p>
+          </div>
+          <p class="captcha-message" id="captchaMessage" aria-live="polite">Kolektahin mo teh, wag mo pindutin yung bomba</p>
+          <button class="primary-btn continue-btn" id="captchaContinue" type="button" hidden>Continue <span aria-hidden="true">→</span></button>
+        </section>
+
+        <section class="flow-step terms-step" id="termsStep" aria-labelledby="termsTitle" hidden>
+          <h1 id="termsTitle" tabindex="-1">Terms & Conditions</h1>
+          <p class="step-copy">BABALA!</p>
+          <div class="terms-card">
+            <ol>
+              <li>Wag pagtawanan 😡</li>
+              <li>Seryosohin.</li>
+              <li>Feel my love in this letter hehe</li>
+              <li>Enjoy your day</li>
+            </ol>
+          </div>
+          <label class="agree-label"><input id="agreeTerms" type="checkbox" /> <span>Understood po madam.</span></label>
+          <p class="form-error" id="termsError" role="alert" aria-live="polite"></p>
+          <button class="primary-btn" id="acceptTermsBtn" type="button">Open <span aria-hidden="true">→</span></button>
+        </section>
+
+      </div>
+    </section>
+  </div>
+
+  <div class="letter-overlay hidden" id="letterOverlay">
+    <section class="letter-window" role="dialog" aria-modal="true" aria-labelledby="letterWindowTitle">
+      <div class="letter-window-body">
+        <section class="letter-page" id="letterPage" aria-labelledby="letterWindowTitle">
+          <h1 id="letterWindowTitle" tabindex="-1">Happy Birthday</h1>
+          <p>Happy birthday, 20th Birthday my Aya!! Okay so first of all, I just wanna tell you how much you guys mean to me. Without you guys...I'd prolly be laying down 6 ft under(jk), I wouldn't be the same as I am right now and I have learned so many things in life because of y'all. Although I have contributed to our group conversations way less, I'm really trying my best to be there for y'all just as much as you guys were there for me and despite me being annoying, saying the most random bullshit and having questionable behaviors, you guys still kept me around and for once, with you guys I truly feel like there's actually nothing wrong with me. Thank you so much Aya for being the best friend Earjen and I needed, time has passed and now we three are very far away from each other but still, I really want you to feel my presence within this letter, although it is not the traditional way we give each other a gift which I very much prefer, I took time and effort to make this :). I also want you to know that even though I don't have emotional intelligent as much as you guys, just a reminder that I'm still here and you can tell me anything you're feeling, and I won't judge. I'm sorry if this is the only way I could gift you, I felt like this lacks something, but I hope you like it! Anyways; Happy Birthday again, there are so many years ahead of us so don't give up, and you'll always have us! I hope we both reunite again :').</p>
+          <img class="thechibi" src="chibi.png" alt="A chibi drawing made for Aya" />
+        </section>
+        <section class="letter-page" id="wishPage" aria-labelledby="wishTitle" hidden>
+          <h1 id="wishTitle" tabindex="-1">Make a Wish</h1>
+          <label class="wish-label" for="wishInput">Write your birthday wish:</label>
+          <input id="wishInput" class="wish-input" type="text" placeholder="Type your wish here…" />
+          <button class="cake-button" id="cakeButton" type="button" aria-label="Blow out the candle" disabled>
+            <img id="wishCake" src="cake.png" alt="Birthday cake with a candle" />
+          </button>
+          <p class="wish-message" id="wishMessage" aria-live="polite">Maglagay ka ng wish tapos pindutin mo yung cake! 😘 (DW di ko naman makikita yan 😒)</p>
+        </section>
+      </div>
+      <nav class="letter-navigation" aria-label="Letter pages">
+        <button class="letter-nav-btn" id="letterBackBtn" type="button" aria-label="Previous page" disabled>&lsaquo;</button>
+        <div class="letter-dots" aria-label="Page progress">
+          <span class="letter-dot is-active" id="letterDot1" aria-current="step"></span>
+          <span class="letter-dot" id="letterDot2"></span>
+        </div>
+        <button class="letter-nav-btn" id="letterNextBtn" type="button" aria-label="Next page">&rsaquo;</button>
+      </nav>
+    </section>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
